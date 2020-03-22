@@ -1,7 +1,8 @@
 /* tables */
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700|Source+Sans+Pro:100,300,400,600,700,300italic,400italic,600italic,700italic");
-$heading_font: 'Roboto Condensed';
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,600&display=swap");
+$heading_font: 'Lato';
 .databaseTable_holder {
   //border-radius: 4px;
   overflow: hidden;

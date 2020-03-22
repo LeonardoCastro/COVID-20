@@ -8,8 +8,9 @@ var margin = {top: 10, right: 100, bottom: 30, left: 30},
 var svg = d3.select("#grafica")
 
   .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    //.attr("width", width + margin.left + margin.right)
+    //.attr("height", height + margin.top + margin.bottom)
+  .attr("viewBox", '0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}')
   .append("g")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
