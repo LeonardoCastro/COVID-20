@@ -19,7 +19,7 @@ d3.csv("https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/d
 
     // List of groups (here I have one group per column)
 
-    var allGroup = ["mexico"]
+    var allGroup = ["Mexico"]
 
 
     // add the options to the button
