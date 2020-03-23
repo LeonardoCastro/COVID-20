@@ -241,19 +241,85 @@ layout: default
 
 
 <h1 class="text-center">Casos</h1>
+
+<div class="card-group">
+  <div class='row d-flex justify-content-center'>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <div class="card-header my-n3" style='height: 4rem;'>Casos activos</div>
+        <h1 class="card-text text-center py-5">88</h1>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted" style='height: 1rem;'>Actualizado: fecha hora</small>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h4 class="card-header my-n3" style='height: 4rem;'>Casos nuevos ultimas 24h</h4>
+        <h1 class="card-text text-center py-5">10</h1>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted" style='height: 1rem;'>Actualizado: fecha hora</small>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h4 class="card-header my-n3" style='height: 4rem;'>Casos totales</h4>
+        <h1 class="card-text text-center py-5">100</h1>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted" style='height: 1rem;'>Actualizado: fecha hora</small>
+      </div>
+    </div>
+  </div>
+  <div class='row d-flex justify-content-center'>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h4 class="card-header my-n3" style='height: 4rem;'>Muertes</h4>
+        <h1 class="card-text text-center py-5">1</h1>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted" style='height: 1rem;'>Actualizado: fecha hora</small>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h4 class="card-header my-n3" style='height: 4rem;'>Recuperaciones</h4>
+        <h1 class="card-text text-center py-5">1</h1>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Actualizado: fecha hora</small>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h4 class="card-header my-n3" style='height: 4rem;'>Tiempo para duplicar casos</h4>
+        <h1 class="card-text text-center py-5">2-3 dias</h1>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted" style='height: 1rem;'>Actualizado: fecha hora</small>
+      </div>
+    </div>
+  </div>
+</div>
+<!--
 <div class="row d-flex justify-content-center">
 <div class="card text-white bg-danger mb-3 col-md-4" style="max-width: 20rem;">
   <div class="card-header text-center">Totales</div>
   <div class="card-body">
     <h4 class="card-title text-center">14,960</h4>
     <!--p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p-->
+    <!--
+
   </div>
 </div>
 <div class="card text-white bg-success mb-3 col-md-4" style="max-width: 20rem;">
-  <div class="card-header text-center">Recuperados</div>
+  <div class="card-header text-center">Recuperaciones</div>
   <div class="card-body">
     <h4 class="card-title text-center">22</h4>
     <!--p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p-->
+    <!--
+
   </div>
 </div>
 <div class="card text-white bg-warning mb-3 col-md-4" style="max-width: 20rem;">
@@ -261,9 +327,40 @@ layout: default
   <div class="card-body">
     <h4 class="card-title text-center">89</h4>
     <!--p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p-->
+    <!--
+
   </div>
 </div>
 </div>
+
+<div class="row d-flex justify-content-center"</div>
+<div class="card text-white" style="max-width: 20rem;">
+  <div class="card-header text-center">Activos</div>
+  <div class="card-body">
+    <h4 class="card-title text-center">14,960</h4>
+    <!--p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p-->
+    <!--
+
+  </div>
+</div>
+<div class="card text-white" style="max-width: 20rem;">
+  <div class="card-header text-center">Muertes</div>
+  <div class="card-body">
+    <h4 class="card-title text-center">22</h4>
+    <!--p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p-->
+    <!--
+  </div>
+</div>
+<div class="card text-white" style="max-width: 20rem;">
+  <div class="card-header text-center">Tiempo para duplicar casos activos</div>
+  <div class="card-body">
+    <h4 class="card-title text-center">2-3 dias</h4>
+    <!--p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p-->
+    <!--
+
+  </div>
+</div>
+--->
 
 
 
@@ -300,11 +397,13 @@ layout: default
 
   <div id="DirectEditPreserve" class="wow fadeInUp databaseTable_holder 122860">
     <div id="DirectEditPreserve" class="databaseTable_heading">
-      <div id="DirectEditPreserve" class="databaseTable_title">Estadisticas por estado</div>
-      <input id="DirectEditPreserve" class="databaseTable_search" type="text" width="200" placeholder="Busca un estado">
+      <h1 id="DirectEditPreserve" class="databaseTable_title text-center">Estadisticas por estado</h1>
+      <div id="DirectEditPreserve" class="gray_bg">
+      <input id="DirectEditPreserve" class="databaseTable_search bg-secondary" type="text" width="200" placeholder="Busca un estado">
+      </div>
     </div>
-    <div id="DirectEditPreserve" class="databaseTable">
-      <div id="DirectEditPreserve" class="databaseTable_import_wrap" style="display: block;">
+    <div id="DirectEditPreserve" class="databaseTable bg-secondary">
+      <div id="DirectEditPreserve" class="databaseTable_import_wrap bg-secondary " style="display: block;">
   	</div>
       <div id="DirectEditPreserve" class="databaseTable_UI_scrollLeft databaseTable_UI_button" style="display: none;"><!-- JS shows/hides by appending the .hidden class --></div>
       <div id="DirectEditPreserve" class="databaseTable_UI_scrollRight databaseTable_UI_button" style="display: none;"><!-- JS shows/hides by appending the .hidden class --></div>

@@ -1,8 +1,8 @@
 /* tables */
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
-@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700|Source+Sans+Pro:100,300,400,600,700,300italic,400italic,600italic,700italic");
+//@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700|Source+Sans+Pro:100,300,400,600,700,300italic,400italic,600italic,700italic");
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,600&display=swap");
-$heading_font: 'Lato';
+$heading_font: 'Nunito Sans';
 .databaseTable_holder {
   //border-radius: 4px;
   overflow: hidden;
@@ -34,11 +34,13 @@ div[class*="databaseTable_import_wrap"] {
 	padding: 1.25em;
 }
 .databaseTable_heading {
-	background-color: #7EB535;
+	background-color: $card-cap-bg;
 	color: #fff;
+  color: inherit;
 	font-weight: normal;
 	height: 3em;
 	position: relative;
+
 }
 .databaseTable_title {
 	position: absolute;
@@ -90,7 +92,7 @@ div[class*="databaseTable_import_wrap"] {
 	color: #444;
 	padding: 0.5em 0.5em;
 	text-transform: uppercase;
-	font: 700 1em/1em roboto condensed, arial, sans-serif;
+	font: 700 1em/1em nunito sans, arial, sans-serif;
 }
 .databaseTable_import th:hover {
 	background-color: #efefef;
@@ -126,7 +128,7 @@ div[class*="databaseTable_import_wrap"] {
 	border: none;
 	border-bottom: 1px solid #ccc;
 	border-right: 1px solid #ccc;
-	font: 1em/1.25em roboto condensed, arial, sans-serif;
+	font: 1em/1.25em nunito sans, arial, sans-serif;
 
 }
 .databaseTable_import tr:last-of-type td {
