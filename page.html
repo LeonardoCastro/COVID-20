@@ -1,0 +1,63 @@
+---
+layout: default
+---
+<article>
+
+  <header>
+    <h1>{{ page.title | escape }}</h1>
+  </header>
+
+  <section>
+    <h1 class='text-center'>Quienes somos</h1>
+      <p class='justify-content-center'> Somos cuatro egresados de la licenciatura en fisica de la UNAM que actualmente realizan sus estudios doctorales en distintas universidades de Inglaterra, Reino Unido. </p>
+      <p class='justify-content-center'>Esta pagina nace de una genuina preocupacion por la pandemia del Coronavirus en Mexico, que llego al pais oficialmente con su primer infectado el 28 de febrero del 2020.
+        Las predicciones mas alentadoras sugieren que la fase mas grave podria extenderse hasta junio del 2020. Sin embargo, seguiremos inmersos en este tema hasta finales de este anio, sino es que hasta el proximo.
+        Queremos construir una pagina de referencia y colaborativa, donde la poblacion con acceso a internet pueda obtener informacion segura de manera rapida y sencilla. </p>
+
+      <p class='justify-content-center'>Si quieres colaborar con nosotros, tenemos dos canales de comuncacion: </p>
+      <ul>
+        <li>escribenos un correo a contacto@coronavirs-es.com</li>
+        <li>si sabes git, puedes colaborar con nosotros usando GitHub, donde esta toda la informacion informacion relevante.</li>
+      </ul>
+
+    <h3 class='text-center'>Integrantes (en orden alfabetico)</h3>
+
+      <h4 class='text-center'> Fabian Aguirre Lopez</h4>
+      <p class='justify-content-center'>Fabian esta en su ultimo anio de doctorado en Matematicas Aplicadas en King's College London, donde tambien hizo su maestria en Modelado de Sistemas Complejos. Su trabajo se enfoca en teoria de redes complejas y matrices aleatorias.</p>
+
+     <h4 class='text-center'> Leonardo Castro Gonzalez</h4>
+     <p class='justify-content-center'> Leonardo esta en su segundo anio de doctorado en Economia en la Universidad de Birmingham. Antes hizo su maestria en modelado de Sistemas Complejos en King's College London. Su trabajo se enfoca en conjuntar Economia y Ciencias Urbanas
+       con Ciencia de datos. Actualmente esta realizando una visita de un anio en el Alan Turing Institute, donde trabaja en un proyecto para detectar la demanda de droga en Inglaterra usando Machine Learning.</p>
+
+    <h4 class='text-center'>Blas Kolic</h4>
+    <p class='justify-content-center'> Blas esta en su segundo anio de doctorado en Matematicas Aplicadas en la Universidad de Oxford. Su trabajo se enfoca en estudiar la transicion a una sociedad post-carbon, trabajando con la opinion del cambio climatico usando teoria de redes</p>
+
+    <h4 class='text-center'> Diego Vidal Cruzprieto</h4>
+    <p class='justify-content-center'> Diego esta en su segundo anio de doctorado en Fisica teorica en la Universidad de York. Antes de eso hizo su maestria en Ciencias Fisicas en la UNAM. Su trabajo se enfoca en detectar unas madres super locas que podrian -o no- revolucionar la ciencia </p>
+  </section>
+
+
+  {%- if site.posts.size > 0 -%}
+    <p class="h4">{{ page.list_title | default: "Posts" }}</p>
+    <ul class="list-unstyled">
+      {%- for post in site.posts -%}
+      <li>
+        <span class="text-muted">
+          {%- assign date_format = "%b %-d, %Y" -%}
+          {{ post.date | date: date_format }}
+        </span>
+        <p class="h5">
+          <a href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </p>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+
+    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  {%- endif -%}
+</article>
