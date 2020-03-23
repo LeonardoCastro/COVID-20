@@ -2,176 +2,13 @@
 layout: default
 ---
 
-<!--
-<head>
+<div class="card text-center bg-danger", style='margin-left: 10%; margin-right: 10%'>
+  <div class="card-body">
+    <h4 class="card-text py-5" style='text-transform:uppercase;'>Si crees estar infectado con coronavirus, manda un mensaje de texto con la palabra <u>covid19</u> al <u>51515</u></h4>
+  </div>
+</div>
 
-  <meta content='width=device-width, initial-scale=1' name='viewport'/>
-  <style>
-     /* misc start */
-     *{
-          margin:0px;
-          padding:0px
-     }
-     body{
-          font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-     }
-     .media1140px{
-          background-color:#CE9429;
-     }
-     .media768px{
-          background-color:#EDD49A;
-     }
-     .media480px{
-          background-color:#EFEF34;
-     }
-     .media300px{
-          background-color:#82EAFF;
-     }
-     .media1140px, .media768px, .media480px, .media300px{
-          padding:15px;
-     }
-     p{
-          margin:0 0 20px 0;
-     }
-     .clearb{
-          clear:both;
-     }
-     /* misc end */
-     /* header start */
-     #mainHeader{
-          background-color:#82EAFF;
-          padding:0.5em;
-          overflow:auto;
-     }
-     #responsiveLogo{
-          width:100%;
-     }
-     #responsiveLogo img{
-          max-height: 100%;
-          max-width: 100%;
-     }
-     /* header end */
-     /* navigation start */
-     nav{
-          float:left;
-          width:100%;
-     }
-     nav ul{
-          list-style-type:none;
-          padding:0;
-     }
-     nav ul li{
-     }
-     nav ul li a{
-          background-color:green;
-          border:thin solid #fff;
-          color:#fff;
-          display:block;
-          height:3em;
-          line-height:3em;
-          text-align:center;
-          text-decoration:none;
-          width:100%;
-     }
-     nav ul li a:hover{
-          background-color:yellow;
-          color:#000;
-     }
-     /* navigation end */
-     /* middle section start */
-     #mainSection{
-          background-color: #D9F8F2;
-          float: left;
-          width: 96%;
-     }
-     #sideBox1{
-          background-color: #C9A449;
-          width: 96%;
-     }
-     #mainSection, #sideBox1{
-          overflow: auto;
-          padding:2%;
-     }
-     /* middle section end */
-     /* footer start */
-     footer{
-          background-color:orange;
-          height:50px;
-          line-height:50px;
-          text-align:center;
-          width:100%;
-     }
-     /* footer end */
-     /* @media start */
-     /* we don't need to specify for smartphones, that's our default layout */
-     /*
-     -7 inch tablets
-     -This CSS will apply for devices with the minimum width of 480 pixels
-     */
-     @media only screen and (min-width: 480px) {
-          #mainHeader {
-               background-color:#EFEF34;
-          }
-          nav ul li{
-               float:left;
-               width:25%;
-          }
-     }
-     /*
-     -10 inch tablets
-     -This CSS will apply for devices with the minimum width of 768 pixels
-     */
-     @media only screen and (min-width: 768px) {
-          #mainHeader {
-               background-color:#EDD49A;
-          }
-          #mainSection{
-               float: left;
-               width: 61%;
-          }
-          #sideBox1{
-               float: right;
-               width: 30%;
-          }
-     }
-     /*
-     -Desktop computers
-     -This CSS will apply for devices with the minimum width of 1140 pixels
-     */
-     @media only screen and (min-width: 1140px) {
-          #mainHeader {
-               background-color:#CE9429;
-          }
-          #responsiveLogo{
-               float:left;
-               width:30%;
-          }
-          nav{
-               float:left;
-               width:70%;
-          }
-          nav ul{
-               margin:1.5em 0 0 0;
-          }
-     }
-     /* @media end */
-     </style>
-   </head>
-<div>
-
-  {% comment %}
-    {%- if page.title -%}
-    <header>
-      <h1>{{ page.title }}</h1>
-    </header>
-    {%- endif -%}
-  {% endcomment %}
-
-
--->
-<h4 style='color: #ff7375; text-align: justify; margin-left: 10%; margin-right: 10%'> Si crees estar infectado con coronavirus, manda un mensaje de texto con la palabra <u>covid19</u> al <u>51515</u></h4> <!--  <span style = "display: block;" align='center'> -->
-
-<h1 class="text-center">Mapa</h1>
+<h1 class="text-center" style='margin-top: 5%;'>Mapa</h1>
 
 <div class="row d-flex justify-content-center">
 <svg id="mapa" width="400" height="300"></svg>
@@ -183,11 +20,11 @@ layout: default
 
 
 
-<h1 class="text-center">Casos</h1>
+<h1 class="text-center" style='margin-top: 5%;'>Casos</h1>
 
-<div class="card-group">
+<div class="card-group" style='margin-left: 10%; margin-right:10%'>
   <div class='row d-flex justify-content-center'>
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 32%;">
       <div class="card-body">
         <div class="card-header my-n3" style='height: 4rem;'>Casos activos</div>
         <h1 class="card-text text-center py-5">88</h1>
@@ -196,7 +33,7 @@ layout: default
         <small class="text-muted" style='height: 1rem;'>Actualizado: fecha hora</small>
       </div>
     </div>
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 32%;">
       <div class="card-body">
         <h4 class="card-header my-n3" style='height: 4rem;'>Casos nuevos ultimas 24h</h4>
         <h1 class="card-text text-center py-5">10</h1>
@@ -205,7 +42,7 @@ layout: default
         <small class="text-muted" style='height: 1rem;'>Actualizado: fecha hora</small>
       </div>
     </div>
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 32%;">
       <div class="card-body">
         <h4 class="card-header my-n3" style='height: 4rem;'>Casos totales</h4>
         <h1 class="card-text text-center py-5">100</h1>
@@ -216,7 +53,7 @@ layout: default
     </div>
   </div>
   <div class='row d-flex justify-content-center'>
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 32%;">
       <div class="card-body">
         <h4 class="card-header my-n3" style='height: 4rem;'>Muertes</h4>
         <h1 class="card-text text-center py-5">1</h1>
@@ -225,7 +62,7 @@ layout: default
         <small class="text-muted" style='height: 1rem;'>Actualizado: fecha hora</small>
       </div>
     </div>
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 32%;">
       <div class="card-body">
         <h4 class="card-header my-n3" style='height: 4rem;'>Recuperaciones</h4>
         <h1 class="card-text text-center py-5">1</h1>
@@ -234,7 +71,7 @@ layout: default
         <small class="text-muted">Actualizado: fecha hora</small>
       </div>
     </div>
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 32%;">
       <div class="card-body">
         <h4 class="card-header my-n3" style='height: 4rem;'>Tiempo para duplicar casos</h4>
         <h1 class="card-text text-center py-5">2-3 dias</h1>
@@ -269,7 +106,7 @@ layout: default
 </div>
 
 
-<button type="button" class="btn btn-primary btn-lg btn-block btn-info">Descarga los datos</button>
+<button type="button" class="btn btn-primary btn-lg btn-block btn-info" style='margin-top: 5%;'>Descarga los datos</button>
 
 
   <section>
