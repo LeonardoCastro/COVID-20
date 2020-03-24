@@ -3,6 +3,7 @@
      urlRecu="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_recuperados.csv",
      urlActivos="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_activos.csv",
      urlMuertes="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_muertes.csv",
+     urlNuevos="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_nuevos.csv",
 
  w = 700,
  h = 400;
@@ -28,14 +29,20 @@ var hover = function(d) {
   d3.csv(urlActivos,function(data) {
       var largo = data.length;
       var tope =largo-1;
-      var recu = document.getElementById('col_act');
-          recu.innerHTML = data[tope][div.innerHTML];
+      var activos = document.getElementById('col_act');
+          activos.innerHTML = data[tope][div.innerHTML];
   });
   d3.csv(urlMuertes,function(data) {
       var largo = data.length;
       var tope =largo-1;
-      var recu = document.getElementById('col_muertes');
-          recu.innerHTML = data[tope][div.innerHTML];
+      var muertes = document.getElementById('col_muertes');
+          muertes.innerHTML = data[tope][div.innerHTML];
+  });
+  d3.csv(urlNuevos,function(data) {
+      var largo = data.length;
+      var tope =largo-1;
+      var nuevos = document.getElementById('col_nuevos');
+          nuevos.innerHTML = data[tope][div.innerHTML];
   });
 };
    /* console.log(selector);
@@ -50,6 +57,8 @@ var projection = d3.geoMercator()
                    .center([-100, 22])
                    .translate([ w/1.7, h/1.7])
                    .scale([ w/.7 ]);
+
+// projection.center.scrollIntoView();
 
 //define path generator
 var path = d3.geoPath()

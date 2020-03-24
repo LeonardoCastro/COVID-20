@@ -19,8 +19,8 @@ layout: default
   <div id="mapa"></div>
 </div>
 
-<div class="justify-content-center table-responsive">
-  <h4 class='text-center' style='margin-top: 2%'>Selecciona un estado</h4>
+<h4 class='text-center' style='margin-top: 2%'>Selecciona un estado</h4>
+<div class="justify-content-center table-responsive" style='text-align: center; margin-left: 5%; margin-right: 5%; width: 90%;'>
   <table class="table table-hover" id="tabla_mapa">
   <thead>
     <tr>
@@ -50,13 +50,13 @@ layout: default
 <!---------------- Estadisticas importantes ------------------------->
 <h1 class="text-center" style='margin-top: 5%;'>Casos</h1>
 
-<div class="card-group text-center" style='margin-left: 5%; margin-right:5%'>
+<div class="card-group text-center" style='margin-left: 5%; margin-right:5%; width: 90%'>
 
-  <div class='row d-flex justify-content-center'>
+  <div class='row justify-content-center'>
     <div class="card" style="width: 32%;">
       <div class="card-body">
-        <div class="card-header d-inline-flex my-n3">Casos activos</div>
-        <h1 class="card-text text-center py-5">88</h1>
+        <div class="card-header my-n3">Casos activos</div>
+        <h1 class="card-text text-center py-5" id="activos"></h1>
       </div>
       <div class="card-footer">
         <small class="text-muted" style='height: 1rem;'>Actualizado: fecha hora</small>
@@ -64,8 +64,8 @@ layout: default
     </div>
     <div class="card" style="width: 32%;">
       <div class="card-body">
-        <h4 class="card-header d-inline-flex my-n3" '>Casos nuevos ultimas 24h</h4>
-        <h1 class="card-text text-center py-5">10</h1>
+        <h4 class="card-header my-n3" '>Casos nuevos ultimas 24h</h4>
+        <h1 class="card-text text-center py-5" id="nuevos"></h1>
       </div>
       <div class="card-footer">
         <small class="text-muted" style='height: 1rem;'>Actualizado: fecha hora</small>
@@ -73,8 +73,8 @@ layout: default
     </div>
     <div class="card" style="width: 32%;">
       <div class="card-body">
-        <h4 class="card-header d-inline-flex my-n3">Casos totales</h4>
-        <h1 class="card-text text-center py-5">100</h1>
+        <h4 class="card-header my-n3">Casos totales</h4>
+        <h1 class="card-text text-center py-5" id="totales"></h1>
       </div>
       <div class="card-footer">
         <small class="text-muted" style='height: 1rem;'>Actualizado: fecha hora</small>
@@ -82,11 +82,11 @@ layout: default
     </div>
   </div>
 
-  <div class='row d-flex justify-content-center'>
+  <div class='row justify-content-center'>
     <div class="card" style="width: 32%;">
       <div class="card-body">
         <h4 class="card-header my-n3"'>Muertes</h4>
-        <h1 class="card-text text-center py-5">1</h1>
+        <h1 class="card-text text-center py-5" id='muertes'></h1>
       </div>
       <div class="card-footer">
         <small class="text-muted" style='height: 1rem;'>Actualizado: fecha hora</small>
@@ -95,7 +95,7 @@ layout: default
     <div class="card" style="width: 32%;">
       <div class="card-body">
         <h4 class="card-header my-n3">Recuperaciones</h4>
-        <h1 class="card-text text-center py-5">1</h1>
+        <h1 class="card-text text-center py-5" id="recuperados"></h1>
       </div>
       <div class="card-footer">
         <small class="text-muted">Actualizado: fecha hora</small>
@@ -129,7 +129,7 @@ layout: default
 
 
 <form method="get" action="https://github.com/LeonardoCastro/COVID19-Mexico/archive/master/data/series_tiempo.zip">
-<button type="submit" class="btn btn-primary btn-lg btn-block btn-info">Descarga los datos</button>
+<button type="submit" class="btn btn-primary btn-lg btn-block btn-info" style='margin-top:5%; margin-right: 5%; margin-left: 5%; width: 90%;'>Descarga los datos</button>
 </form>
 
 
