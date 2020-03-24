@@ -1,19 +1,19 @@
 // set the dimensions and margins of the graph
 var margin = {top: 10, right: 30, bottom: 30, left: 30},
     width = 460 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom; 
+    height = 400 - margin.top - margin.bottom;
 var url="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_recuperados.csv";
 
 
 var svgR = d3.select("#grafica_recu")
-  .append("svg")
-  //.attr("viewBox","0 0 460 400")
-  .attr("width","460")
-  .attr("height","430")
-  .append("g")
-    .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
-    //.attr("viewBox","0 0 460 400");
+             .append("svg")
+             //.attr("viewBox","0 0 460 400")
+             .attr("width","460")
+             .attr("height","430")
+             .append("g")
+                 .attr("transform",
+                      "translate(" + margin.left + "," + margin.top + ")");
+                //.attr("viewBox","0 0 460 400");
 
 //Read the data
 d3.csv(url, function(data) {
@@ -24,7 +24,7 @@ d3.csv(url, function(data) {
     var tope=data.length-1;
     data.forEach(function(d) {
                d.Fecha = new Date(d.Fecha);
-               d.Mexico = +d.Mexico;
+               d.Mexico_pais = +d.Mexico_pais;
             });
     //console.log(allGroupb);
     // add the options to the button
@@ -35,7 +35,7 @@ d3.csv(url, function(data) {
       .append('option')
       .text(function (d) { return d; }) // text showed in the menu
       .attr("value", function (d) { return d; }) // corresponding value returned by the button
- 
+
 
  // define the x scale (horizontal)
 
@@ -57,7 +57,7 @@ var yyyy = today.getFullYear();
       .attr("transform", "translate(0," + height + ")")
       .attr("class","graph_date")
       .call(d3.axisBottom(x))
-      .selectAll("text")  
+      .selectAll("text")
         .style("text-anchor", "end")
         .attr("dx", "-.8em")
         .attr("dy", ".15em")
@@ -65,7 +65,7 @@ var yyyy = today.getFullYear();
 
     // Add Y axis      //
     var y = d3.scaleLinear()
-    .domain( [0,d3.max(data, function(d){return d.Mexico;  })])
+    .domain( [0,d3.max(data, function(d){return d.Mexico_pais;  })])
       .range([ height, 0 ]);
     svgR.append("g")
       .call(d3.axisLeft(y));
@@ -77,7 +77,7 @@ var yyyy = today.getFullYear();
         .datum(data)
         .attr("d", d3.line()
           .x(function(d) { return x(d.Fecha) })
-          .y(function(d) { return y(+d.Mexico) })
+          .y(function(d) { return y(+d.Mexico_pais) })
         )
         .attr("stroke", "#1f9bcf")
         .style("stroke-width", 3)
@@ -90,7 +90,7 @@ var yyyy = today.getFullYear();
       .enter()
       .append('circle')
         .attr("cx", function(d) { return x(+d.Fecha) })
-        .attr("cy", function(d) { return y(+d.Mexico) })
+        .attr("cy", function(d) { return y(+d.Mexico_pais) })
         .attr("r", 4)
         .style("fill", "#1F9BCF")
 
@@ -127,4 +127,3 @@ var yyyy = today.getFullYear();
     })
 
 });
-

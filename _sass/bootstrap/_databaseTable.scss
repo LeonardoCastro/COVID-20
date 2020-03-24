@@ -48,7 +48,7 @@ div[class*="databaseTable_import_wrap"] {
 	top: 0;
 	bottom: 0;
 	font: 100 1.5em/2em $heading_font;
-	width: calc( 100% - 202px - 1em ); /* width of searchbox */
+	width: 100%; /* width of searchbox  calc( 100% - 202px - 1em) */
   text-overflow: ellipsis;
 	overflow: hidden;
   white-space: nowrap;
