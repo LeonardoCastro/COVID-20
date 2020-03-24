@@ -181,21 +181,45 @@ th {
   margin-left:-15px;
   }
 }
+// Graficas ==================================================================
+#grafica_totales {
+overflow: auto;
+}
+
+#grafica_recu {
+  overflow:auto;
+}
+
+#pob_pyr {
+  overflow:auto;
+}
+
+// Tabla ==================================================================
 
 
 // Mapa ==================================================================
 
+#mapa {
+  overflow:auto;
+}
 
+#mapa path {
+      stroke-width: 0.3;
+      stroke:#2B2B2B;
+      fill: #1F9BCF;
+    }
+
+   #mapa path:hover {
+      fill: #07918A;
+    }
+
+/* MARK II
 .boundary {
       fill: none;
       stroke: #888;
       stroke-linejoin: round;
     }
-    svg {
-      border-style: solid;
-      border-width: 1px;
-      border-color: #ccc;
-    }
+
     #tooltip{
       position: absolute;
       z-index: 2;
@@ -210,3 +234,10 @@ th {
       left:-150px;
       font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" ;
     }
+
+    */
+     .line {
+            fill: none;
+            stroke: green;
+            stroke-width: 5px;
+         }

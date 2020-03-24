@@ -1,28 +1,31 @@
 // set the dimensions and margins of the graph
-var margin = {top: 10, right: 100, bottom: 30, left: 30},
+var margin = {top: 10, right: 30, bottom: 30, left: 30},
     width = 460 - margin.left - margin.right,
-    height = 480 - margin.top - margin.bottom;
+    height = 400 - margin.top - margin.bottom; 
+var url="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv";
 
-// append the svg object to the body of the page
 
-var svg = d3.select("#grafica")
-
+//.attr("width","0 0 400 200") 
+var svgT = d3.select("#grafica_totales")
   .append("svg")
-    //.attr("width", width + margin.left + margin.right)
-    //.attr("height", height + margin.top + margin.bottom)
-  .attr("viewBox", '0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}')
+  .attr("width","460")
+  .attr("height","430")
   .append("g")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
 //Read the data
-d3.csv("https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_activos.csv", function(data) {
+d3.csv(url, function(data) {
 
     // List of groups (here I have one group per column)
-
-    var allGroup = ["Mexico"]
-
-
+    var allGroup = ["Lineal","Logarítmica"];
+    //var allGroupb = {Lineal:Mexico,"Logarítmica":Mexico_log10};
+    var tope=data.length-1;
+    data.forEach(function(d) {
+               d.Fecha = new Date(d.Fecha);
+               d.Mexico = +d.Mexico;
+            });
+    //console.log(allGroupb);
     // add the options to the button
     d3.select("#selectButton")
       .selectAll('myOptions')
@@ -31,44 +34,63 @@ d3.csv("https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/d
       .append('option')
       .text(function (d) { return d; }) // text showed in the menu
       .attr("value", function (d) { return d; }) // corresponding value returned by the button
+ 
+
+ // define the x scale (horizontal)
+
+      var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+//today = mm + '/' + dd + '/' + yyyy;
+
+
+        var mindate = new Date(2020,1,28);
 
     // Add X axis --> it is a date format
-    var x = d3.scaleLinear()
-      .domain([0,22])
+    var x = d3.scaleTime()
+      .domain([mindate,today])
       .range([ 0, width ]);
-    svg.append("g")
+    svgT.append("g")
       .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x));
+      .attr("class","graph_date")
+      .call(d3.axisBottom(x))
+      .selectAll("text")  
+        .style("text-anchor", "end")
+        .attr("dx", "-.8em")
+        .attr("dy", ".15em")
+        .attr("transform", "rotate(-65)");
 
-    // Add Y axis
+    // Add Y axis      //
     var y = d3.scaleLinear()
-      .domain( [0,200])
+    .domain( [0,d3.max(data, function(d){return d.Mexico;  })])
       .range([ height, 0 ]);
-    svg.append("g")
+    svgT.append("g")
       .call(d3.axisLeft(y));
 
     // Initialize line with group a
-    var line = svg
+    var line = svgT
       .append('g')
       .append("path")
         .datum(data)
         .attr("d", d3.line()
-          .x(function(d) { return x(+d.time) })
-          .y(function(d) { return y(+d.valueA) })
+          .x(function(d) { return x(d.Fecha) })
+          .y(function(d) { return y(+d.Mexico) })
         )
-        .attr("stroke", "black")
-        .style("stroke-width", 4)
+        .attr("stroke", "#1f9bcf")
+        .style("stroke-width", 3)
         .style("fill", "none")
 
     // Initialize dots with group a
-    var dot = svg
+    var dot = svgT
       .selectAll('circle')
       .data(data)
       .enter()
       .append('circle')
-        .attr("cx", function(d) { return x(+d.time) })
-        .attr("cy", function(d) { return y(+d.valueA) })
-        .attr("r", 7)
+        .attr("cx", function(d) { return x(+d.Fecha) })
+        .attr("cy", function(d) { return y(+d.Mexico) })
+        .attr("r", 4)
         .style("fill", "#1F9BCF")
 
 
@@ -104,17 +126,4 @@ d3.csv("https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/d
     })
 
 });
-/*
-    //DEBUG
 
-    d3.csv("https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv",function(data) {
-  var cause = [],
-    prevalence = [],
-    disability = [];
-    cause.push(data.Lat);
-    prevalence.push(data.prevalence);
-    disability.push(data.disability);
-  console.log(data[1][]);
-
-});
-*/

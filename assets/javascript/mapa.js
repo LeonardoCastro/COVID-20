@@ -1,8 +1,10 @@
 //set dimensions
  var urlTotal="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv",
+
      urlRecu="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_recuperados.csv",
      urlActivos="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_activos.csv",
      urlMuertes="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_muertes.csv",
+
  w = 700,
  h = 400;
 /*var  adjust = window.innerWidth;
@@ -35,7 +37,7 @@ d3.csv(urlMuertes,function(data) {
    var tope =largo-1;
 var recu = document.getElementById('col_muertes');
     recu.innerHTML = data[tope][div.innerHTML];
-});
+
    /* console.log(selector);
 var prueba = new Date(2020,2,21);
 d3.csv("https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv")
@@ -70,3 +72,19 @@ d3.json("https://raw.githubusercontent.com/vidaleando/COVID-19/master/assets/jav
           .on("mouseover", hover);
 
 });
+
+/*,function(data) {
+                var parsedCSV = d3.csv.parseRows(data);
+                console.log(parsedCSV);
+                var container = d3.select("#tabla_mapa")
+                    .append("table")
+
+                    .selectAll("tr")
+                        .data(parsedCSV).enter()
+                        .append("tr")
+
+                    .selectAll("td")
+                        .data(function(d) { return d; }).enter()
+                        .append("td")
+                        .text(function(d) { return d; });
+            });*/
