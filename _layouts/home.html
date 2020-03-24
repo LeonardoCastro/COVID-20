@@ -2,24 +2,52 @@
 layout: default
 ---
 
-<div class="card text-center bg-danger", style='margin-left: 10%; margin-right: 10%'>
-  <div class="card-body">
-    <h4 class="card-text py-5" style='text-transform:uppercase;'>Si crees estar infectado con coronavirus, manda un mensaje de texto con la palabra <u>covid19</u> al <u>51515</u></h4>
-  </div>
+
+<!------------- Aviso sobre posible infeccion -------------------->
+<div class="alert alert-dismissible alert-danger" style='margin-left: 5%; margin-right: 5%;'>
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <h4 class="alert-heading">Aviso</h4>
+  <p class="mb-0">Si crees estar <a href="https://www.cdc.gov/coronavirus/2019-ncov/downloads/2019-ncov-factsheet-sp.pdf" class="alert-link">infectado</a>, manda un mensaje con la palabra <a href="#" class="alert-link">COVID al 51515</a>.</p>
 </div>
 
+
+<!------------------------- Mapa ---------------------------------->
 <h1 class="text-center" style='margin-top: 5%;'>Mapa</h1>
 
 <div class="row d-flex justify-content-center">
-<svg id="mapa" width="400" height="300"></svg>
+  <div id="mapa"></div>
 </div>
-<!--div id="map" class="d-block text-center"></div>
-<div id="tooltip" class="text-center"></div-->
 
+<div class="justify-content-center table-responsive">
+  <h4 class='text-center' style='margin-top: 2%'>Selecciona un estado</h4>
+  <table class="table table-hover" id="tabla_mapa">
+  <thead>
+    <tr>
+      <th scope="col">Entidad</th>
+      <th scope="col">Casos totales</th>
+      <th scope="col">Casos activos</th>
+      <th scope="col">Muertes</th>
+      <th scope="col">Casos recuperados</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-info">
+      <th scope="row" id="tooltip">Selecciona</th>
+      <td id="col_tot">Column content</td>
+      <td id="col_act">Column content</td>
+      <td id="col_muertes">Column content</td>
+      <td id="col_recu">Column content</td>
+    </tr>
+  </tbody>
+  </table>
+
+</div>
 <script src="{{ "/assets/javascript/mapa.js" | relative_url }}"></script>
 
 
 
+
+<!---------------- Estadisticas importantes ------------------------->
 <h1 class="text-center" style='margin-top: 5%;'>Casos</h1>
 
 <div class="card-group text-center" style='margin-left: 5%; margin-right:5%'>
@@ -27,7 +55,7 @@ layout: default
   <div class='row d-flex justify-content-center'>
     <div class="card" style="width: 32%;">
       <div class="card-body">
-        <div class="card-header my-n3">Casos activos</div>
+        <div class="card-header d-inline-flex my-n3">Casos activos</div>
         <h1 class="card-text text-center py-5">88</h1>
       </div>
       <div class="card-footer">
@@ -36,7 +64,7 @@ layout: default
     </div>
     <div class="card" style="width: 32%;">
       <div class="card-body">
-        <h4 class="card-header my-n3" '>Casos nuevos ultimas 24h</h4>
+        <h4 class="card-header d-inline-flex my-n3" '>Casos nuevos ultimas 24h</h4>
         <h1 class="card-text text-center py-5">10</h1>
       </div>
       <div class="card-footer">
@@ -45,7 +73,7 @@ layout: default
     </div>
     <div class="card" style="width: 32%;">
       <div class="card-body">
-        <h4 class="card-header my-n3">Casos totales</h4>
+        <h4 class="card-header d-inline-flex my-n3">Casos totales</h4>
         <h1 class="card-text text-center py-5">100</h1>
       </div>
       <div class="card-footer">
