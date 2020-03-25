@@ -55,7 +55,7 @@ layout: default
     <div class='col'>
     <div class="card mb-3 mx-auto" style="width: 17rem;">
       <div class="card-body">
-        <div class="card-header my-n3" >Casos activos</div>
+        <div class="card-header my-n3" >Activos</div>
         <h1 class="card-text text-center py-5" id="activos"></h1>
       </div>
       <div class="card-footer">
@@ -66,7 +66,7 @@ layout: default
     <div class='col'>
     <div class="card mb-3 mx-auto" style="width: 17rem;">
       <div class="card-body">
-        <h4 class="card-header my-n3" >Casos nuevos </br>ultimas 24h</h4>
+        <h4 class="card-header my-n3" >Nuevos </br>ultimas 24h</h4>
         <h1 class="card-text text-center py-5" id="nuevos"></h1>
       </div>
       <div class="card-footer">
@@ -77,7 +77,7 @@ layout: default
     <div class='col'>
     <div class="card mb-3 mx-auto" style="width: 17rem;" >
       <div class="card-body">
-        <h4 class="card-header my-n3">Casos totales</h4>
+        <h4 class="card-header my-n3">Totales</h4>
         <h1 class="card-text text-center py-5" id="totales"></h1>
       </div>
       <div class="card-footer">
@@ -129,16 +129,16 @@ layout: default
 
 <!-- Create a div where the graph will take place -->
 <div class="justify-content-center" id="grafica_totales"><h3 class="text-center">Casos totales</h3></div>
-<div class="justify-content-center" id="grafica_recu"><h3 class="text-center">Recuperados</h3></div>
+<div class="justify-content-center" id="barplot_nuevos"><h3 class="text-center">Recuperados</h3></div>
 <script src="{{ "/assets/javascript/grafica_totales.js" | relative_url }}"></script>
-<script src="{{ "/assets/javascript/grafica_recu.js" | relative_url }}"></script>
+<script src="{{ "/assets/javascript/barplot_nuevos.js" | relative_url }}"></script>
 </div>
 
 <!--BOTÓN DE DESCARGA-->
 
 
 <form method="get" action="https://github.com/LeonardoCastro/COVID19-Mexico/archive/master/data/series_tiempo.zip">
-<button type="submit" class="btn btn-primary btn-lg btn-block btn-info" style='margin-top:5%; margin-right: 5%; margin-left: 5%; width: 90%;'>Descarga los datos</button>
+  <button type="submit" class="btn btn-primary btn-lg btn-block btn-info" style='margin-top: 5%; margin-right: 15%; margin-left: 15%; width: 70%;'>Descarga los datos</button>
 </form>
 
 
