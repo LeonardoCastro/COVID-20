@@ -68,7 +68,7 @@ $(document).ready(function() {
 
   $('.122860 .databaseTable_import_wrap').CSVToTable( csvfile_import_122860 , { loadingText: 'Generando tabla', loadingImage: 'https://campus.mst.edu/emctest/t4_template/content_types/search_sort_table/images/loading.gif', startLine: 0, tableClass: "databaseTable_import table", theadClass: "heading" }).bind("loadComplete",function() {
 
-  $('.122860 .databaseTable_import_wrap').find('TABLE').tablesorter({ widgets: ["zebra"] });
+  $('.122860 .databaseTable_import_wrap').find('Table').tablesorter({ widgets: ["zebra"] });
   $('.122860 .databaseTable_import').filterTable({inputSelector:".122860 .databaseTable_search"});
   assignButtons_122860();
   checkButtonNecessity_122860();

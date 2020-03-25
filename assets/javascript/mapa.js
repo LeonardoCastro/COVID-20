@@ -5,8 +5,21 @@
      urlMuertes="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_muertes.csv",
      urlNuevos="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_nuevos.csv",
 
- w = 700,
- h = 400;
+     width = 700,//$(window).innerWidth()*.97,
+     height = 400;//width/1.85;
+
+
+//var viewportHeight = $(window).height()/2;
+//var width = viewportWidth * .97;
+//var height = width/1.85;
+
+/*if ($(window).width()<500px) {
+  viewportWidth = $(window).width();
+}
+
+if ($(window).width()<500px) {
+  viewportHeight = viewportWidth/1.85;
+} */
 /*var  adjust = window.innerWidth;
 $('#mapa').scrollLeft(adjust/2);*/
 
@@ -55,20 +68,20 @@ d3.csv("https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/d
 //define projection
 var projection = d3.geoMercator()
                    .center([-100, 22])
-                   .translate([ w/1.7, h/1.7])
-                   .scale([ w/.7 ]);
+                   .translate([ width/1.7, height/1.7])
+                   .scale([ width/.7 ]);
 
 // projection.center.scrollIntoView();
 
 //define path generator
 var path = d3.geoPath()
-             .projection(projection)
+             .projection(projection);
 
 //svg
 var mapSvg = d3.select("#mapa")
                .append("svg")
-                .attr("width", w)
-                .attr("height", h);
+                .attr("width", width)
+                .attr("height", height);
 
 //load GeoJson data
 d3.json("https://raw.githubusercontent.com/vidaleando/COVID-19/master/assets/javascript/mexico.json", function(json) {
@@ -81,6 +94,27 @@ d3.json("https://raw.githubusercontent.com/vidaleando/COVID-19/master/assets/jav
               .on("mouseover", hover);
         });
 
+
+d3.select(window).on('resize', resize);
+
+function resize() {
+
+    width = parseInt(d3.select('article').style('width'));
+    width = $(window).width() * .95;
+    height = width/1.85;
+
+   projection
+    	.scale([width/.7])
+   		.translate([width/1.7,height/1.7]);
+
+
+   d3.select("article").attr("width",width).attr("height",height);
+   d3.select("svg").attr("width",width).attr("height",height);
+
+   d3.selectAll("path").attr('d', path);
+
+
+}
 /*,function(data) {
                 var parsedCSV = d3.csv.parseRows(data);
                 console.log(parsedCSV);
