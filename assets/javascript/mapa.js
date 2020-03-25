@@ -5,7 +5,7 @@
      urlMuertes="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_muertes.csv",
      urlNuevos="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_nuevos.csv",
 
-     width = 700,//$(window).innerWidth()*.97,
+     width = 700,//(window).width()*.97,
      height = 400;//width/1.85;
 
 
@@ -99,7 +99,7 @@ d3.select(window).on('resize', resize);
 
 function resize() {
 
-    width = parseInt(d3.select('article').style('width'));
+    width = parseInt(d3.select('#mapa').style('width'));
     width = $(window).width() * .95;
     height = width/1.85;
 
@@ -108,8 +108,8 @@ function resize() {
    		.translate([width/1.7,height/1.7]);
 
 
-   d3.select("article").attr("width",width).attr("height",height);
-   d3.select("svg").attr("width",width).attr("height",height);
+   d3.select("#mapa").attr("width",width).attr("height",height);
+   d3.select("Mapsvg").attr("width",width).attr("height",height);
 
    d3.selectAll("path").attr('d', path);
 
