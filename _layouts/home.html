@@ -20,7 +20,7 @@ layout: default
 </div>
 
 <h4 class='text-center' style='margin-top: 2%'>Selecciona un estado</h4>
-<div class="justify-content-center table-responsive " style='text-align: center; margin-left: 5% auto; margin-right: 5% auto; width: 90% auto;'>
+<div class="justify-content-center table-responsive" style='text-align: center; margin-left: 5% auto; margin-right: 5% auto; width: 90% auto;'>
   <table class="table table-hover" id="tabla_mapa">
   <thead>
     <tr>
@@ -50,30 +50,34 @@ layout: default
 <!---------------- Estadisticas importantes ------------------------->
 <h1 class="text-center" style='margin-top: 5%;'>Casos</h1>
 
-<div class="card-group text-center" style='margin-left: 5%; margin-right:5%; width: 90%'>
 
   <div class='row justify-content-center'>
-    <div class="card" style="width: 32%;">
+    <div class='col'>
+    <div class="card mb-3 mx-auto" style="width: 20rem;">
       <div class="card-body">
-        <div class="card-header my-n3">Casos activos</div>
+        <div class="card-header my-n3" >Casos activos</div>
         <h1 class="card-text text-center py-5" id="activos"></h1>
       </div>
       <div class="card-footer">
         <small class="text-muted" style='height: 1rem;'>Actualizado: fecha hora</small>
       </div>
     </div>
-    <div class="card" style="width: 32%;">
+</div>
+    <div class='col'>
+    <div class="card mb-3 mx-auto" style="width: 20rem;">
       <div class="card-body">
-        <h4 class="card-header my-n3" '>Casos nuevos ultimas 24h</h4>
+        <h4 class="card-header my-n3" >Casos nuevos </br>ultimas 24h</h4>
         <h1 class="card-text text-center py-5" id="nuevos"></h1>
       </div>
       <div class="card-footer">
         <small class="text-muted" style='height: 1rem;'>Actualizado: fecha hora</small>
       </div>
     </div>
-    <div class="card" style="width: 32%;">
+</div>
+    <div class='col'>
+    <div class="card mb-3 mx-auto" style="width: 20rem;" >
       <div class="card-body">
-        <h4 class="card-header cccccmy-n3">Casos totales</h4>
+        <h4 class="card-header my-n3">Casos totales</h4>
         <h1 class="card-text text-center py-5" id="totales"></h1>
       </div>
       <div class="card-footer">
@@ -81,9 +85,10 @@ layout: default
       </div>
     </div>
   </div>
-
+</div>
   <div class='row justify-content-center'>
-    <div class="card" style="width: 32%;">
+<div class='col'>
+    <div class="card mb-3 mx-auto" style="width: 20rem;">
       <div class="card-body">
         <h4 class="card-header my-n3"'>Muertes</h4>
         <h1 class="card-text text-center py-5" id='muertes'></h1>
@@ -92,7 +97,9 @@ layout: default
         <small class="text-muted" style='height: 1rem;'>Actualizado: fecha hora</small>
       </div>
     </div>
-    <div class="card" style="width: 32%;">
+</div>
+    <div class='col'>
+    <div class="card mb-3 mx-auto" style="width: 20rem;">
       <div class="card-body">
         <h4 class="card-header my-n3">Recuperaciones</h4>
         <h1 class="card-text text-center py-5" id="recuperados"></h1>
@@ -101,9 +108,11 @@ layout: default
         <small class="text-muted">Actualizado: fecha hora</small>
       </div>
     </div>
-    <div class="card" style="width: 32%;">
+</div>
+    <div class='col'>
+    <div class="card mb-3 mx-auto" style="width: 20rem;">
       <div class="card-body">
-        <h4 class="card-header my-n3" >Tiempo para duplicar casos</h4>
+        <h4 class="card-header my-n3" >Tiempo para </br>duplicar casos</h4>
         <h1 class="card-text text-center py-5">2-3 dias</h1>
       </div>
       <div class="card-footer">
@@ -112,7 +121,7 @@ layout: default
     </div>
   </div>
 </div>
-
+</div>
 <!--ESTO INICIA UNA GRAFICA-->
 <!-- Initialize a select button -->
 <!--select id="selectButton"></select-->
