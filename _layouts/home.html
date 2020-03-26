@@ -3,14 +3,49 @@ layout: default
 ---
 <script src="{{ "/assets/javascript/summon.js" | relative_url }}"></script>
 
-
 <!------------- Aviso sobre posible infeccion -------------------->
-<div class="alert alert-dismissible alert-danger" style='margin-left: 5%; margin-right: 5%;'>
-  <button type="button" class="close" data-dismiss="alert">&times;</button>
-  <h4 class="alert-heading">Aviso</h4>
-  <p class="mb-0">Si crees estar <a href="https://www.cdc.gov/coronavirus/2019-ncov/downloads/2019-ncov-factsheet-sp.pdf" class="alert-link">infectado</a>, manda un mensaje con la palabra <a href="#" class="alert-link">COVID al 51515</a>.</p>
-</div>
+<div class="alert alert-dismissible alert-info" style='margin-left: 5%; margin-right: 5%;'>
 
+  <h4 class="alert-heading">Línea de contacto oficial</h4>
+  <p class="mb-0">Si crees estar <abbr title="Fiebre, tos, estornudos, malestar general, dolor de cabeza y dificultad para respirar">infectado</abbr>, por favor aíslate y manda un mensaje con la palabra <a href="sms:51515?body=COVID" class="alert-link">COVID al 51515</a>.</p>
+</div>
+<div>
+
+<!--INICIA SEMÁFORO-->
+<h1 class="text-center" style='margin-top: 5%'>Casos nacionales</h1>
+<div class="row d-flex justify-content-center" style='width: 90%; margin-left: 5%; margin-right: 5%;'>
+  <div class="card text-white bg-danger mb-3 col-md-4" style="max-width: 20rem;">
+    <div class="card-header text-center">Totales</div>
+    <div class="card-body">
+      <h4 class="card-title text-center" id="totales"></h4>
+      <!--p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p-->
+    </div>
+    <div class="card-footer d-flex" style='width: 100%'>
+      <small class="text-white" style='height: 1rem;' id='tiempo_actualizacion_0'></small>
+    </div>
+  </div>
+  <div class="card text-white bg-warning mb-3 col-md-4" style="max-width: 20rem;">
+    <div class="card-header text-center">Nuevos (últimas 24h)</div>
+    <div class="card-body">
+      <h4 class="card-title text-center" id="nuevos"></h4>
+      <!--p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p-->
+    </div>
+    <div class="card-footer d-flex" style='width: 100%'>
+      <small class="text-white" style='height: 1rem;' id='tiempo_actualizacion_1'></small>
+    </div>
+  </div>
+  <div class="card text-white bg-dark mb-3 col-md-4" style="max-width: 20rem;">
+    <div class="card-header text-center">Muertes</div>
+    <div class="card-body">
+      <h4 class="card-title text-center" id="muertes"></h4>
+      <!--p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p-->
+    </div>
+    <div class="card-footer d-flex" style='width: 100%'>
+      <small class="text-white" style='height: 1rem;' id='tiempo_actualizacion_2'></small>
+    </div>
+  </div>
+</div>
+<script src="{{ "/assets/javascript/summon.js" | relative_url }}"></script>
 
 <!------------------------- Mapa ---------------------------------->
 <h1 class="text-center" style='margin-top: 5%;'>Mapa</h1>
@@ -18,6 +53,10 @@ layout: default
 <div class="row justify-content-center">
   <div id="mapa"></div>
 </div>
+<script src="{{ "/assets/javascript/mapa.js" | relative_url }}"></script>
+
+
+{% comment %}
 
 <h4 class='text-center' style='margin-top: 2%'>Selecciona un estado</h4>
 <div class="justify-content-center table-responsive" style='text-align: center; margin-left: 5% auto; margin-right: 5% auto; width: 90% auto;'>
@@ -42,7 +81,7 @@ layout: default
   </tbody>
   </table>
 </div>
-<script src="{{ "/assets/javascript/mapa.js" | relative_url }}"></script>
+
 
 
 
@@ -122,14 +161,18 @@ layout: default
   </div>
 </div>
 </div>
+
+{% endcomment %}
+
+
 <!--ESTO INICIA UNA GRAFICA-->
 <!-- Initialize a select button -->
 <!--select id="selectButton"></select-->
-<div class="row d-flex justify-content-center">
+<div class="row d-flex justify-content-center" style='margin-top: 5%'>
 
 <!-- Create a div where the graph will take place -->
 <div class="justify-content-center" id="grafica_totales"><h3 class="text-center">Casos totales</h3></div>
-<div class="justify-content-center" id="barplot_nuevos"><h3 class="text-center">Recuperados</h3></div>
+<div class="justify-content-center" id="barplot_nuevos"><h3 class="text-center">Casos nuevos por día</h3></div>
 <script src="{{ "/assets/javascript/grafica_totales.js" | relative_url }}"></script>
 <script src="{{ "/assets/javascript/barplot_nuevos.js" | relative_url }}"></script>
 </div>
@@ -138,7 +181,7 @@ layout: default
 
 
 <form method="get" action="https://github.com/LeonardoCastro/COVID19-Mexico/archive/master/data/series_tiempo.zip">
-  <button type="submit" class="btn btn-primary btn-lg btn-block btn-info" style='margin-top: 5%; margin-right: 15%; margin-left: 15%; width: 70%;'>Descarga los datos</button>
+  <button type="submit" class="btn btn-primary btn-lg btn-block btn-info" style='margin-top: 5%; margin-right: 5%; margin-left: 5%; width: 90%;'>Descarga los datos</button>
 </form>
 
 

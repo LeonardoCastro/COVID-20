@@ -5,6 +5,10 @@ var margin = {top: 10, right: 30, bottom: 30, left: 30},
 var url="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv";
 
 
+var tip = d3.select("#grafica_totales").append("div")
+    .attr("class", "tip")
+    .style("opacity", 0);
+
 //.attr("width","0 0 400 200")
 var svgT = d3.select("#grafica_totales")
   .append("svg")
@@ -90,8 +94,21 @@ var yyyy = today.getFullYear();
       .append('circle')
         .attr("cx", function(d) { return x(+d.Fecha) })
         .attr("cy", function(d) { return y(+d.Mexico_pais) })
-        .attr("r", 4)
+        .attr("r", 6)
         .style("fill", "#1F9BCF")
+        .on("mouseover", function(d) {
+            tip.transition()
+                .duration(200)
+                .style("opacity", .9);
+            tip.html("<h6>" + formatDay(d.Fecha) + "/" + formatMonth(d.Fecha) + "</h6>"+ " <p class='text-primary'>"  + d.Mexico_pais + "</p>")
+                .style("left", (d3.event.pageX) + "px")
+                .style("top", (d3.event.pageY - 28) + "px");
+            })
+        .on("mouseout", function(d) {
+            tip.transition()
+                .duration(500)
+                .style("opacity", 0);
+        });
 
 
     // A function that update the chart

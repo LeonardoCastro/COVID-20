@@ -7,6 +7,10 @@ var urlNuevos = "https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico
 
 var widthBar = 6;
 
+var tip = d3.select("#grafica_totales").append("div")
+    .attr("class", "tip")
+    .style("opacity", 0);
+
 // append the svg object to the body of the page
 var svgBar = d3.select("#barplot_nuevos")
   .append("svg")
@@ -71,6 +75,21 @@ d3.csv(urlNuevos, function(data) {
           // no bar at the beginning thus:
           .attr("height", function(d) { return height - y(0); }) // always equal to 0
           .attr("y", function(d) { return y(0); })
+          .on("mouseover", function(d) {
+              tip.transition()
+                  .duration(200)
+                  .style("opacity", 0.9);
+              tip.html("<h6>" + formatDay(d.Fecha) + "/" + formatMonth(d.Fecha) + "</h6>"+ " <p class='text-primary'>"  + d.Mexico_pais + "</p>")
+                  .style("left", (d3.event.pageX) + "px")
+                  .style("top", (d3.event.pageY - 28) + "px");
+              //.style("opacity", 0.2)
+              })
+          .on("mouseout", function(d) {
+              tip.transition()
+                  .duration(500)
+                  .style("opacity", 0);
+                //.style("opacity", 0.8)
+          });
 
   // Animation
   svgBar.selectAll("rect")
