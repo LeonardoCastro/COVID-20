@@ -27,7 +27,7 @@ d3.csv(url, function(data) {
     var tope=data.length-1;
     data.forEach(function(d) {
                d.Fecha = new Date(d.Fecha);
-               d.Mexico_pais = +d.Mexico_pais;
+               d.México = +d.México;
             });
     //console.log(allGroupb);
     // add the options to the button
@@ -68,7 +68,7 @@ var yyyy = today.getFullYear();
 
     // Add Y axis      //
     var y = d3.scaleLinear()
-    .domain( [0,d3.max(data, function(d){return d.Mexico_pais;  })])
+    .domain( [0,d3.max(data, function(d){return d.México;  })])
       .range([ height, 0 ]);
     svgT.append("g")
       .call(d3.axisLeft(y));
@@ -80,7 +80,7 @@ var yyyy = today.getFullYear();
         .datum(data)
         .attr("d", d3.line()
           .x(function(d) { return x(d.Fecha) })
-          .y(function(d) { return y(+d.Mexico_pais) })
+          .y(function(d) { return y(+d.México) })
         )
         .attr("stroke", "#1f9bcf")
         .style("stroke-width", 3)
@@ -93,14 +93,14 @@ var yyyy = today.getFullYear();
       .enter()
       .append('circle')
         .attr("cx", function(d) { return x(+d.Fecha) })
-        .attr("cy", function(d) { return y(+d.Mexico_pais) })
+        .attr("cy", function(d) { return y(+d.México) })
         .attr("r", 6)
         .style("fill", "#1F9BCF")
         .on("mouseover", function(d) {
             tip.transition()
                 .duration(200)
                 .style("opacity", .9);
-            tip.html("<h6>" + formatDay(d.Fecha) + "/" + formatMonth(d.Fecha) + "</h6>"+ " <p class='text-primary'>"  + d.Mexico_pais + "</p>")
+            tip.html("<h6>" + formatDay(d.Fecha) + "/" + formatMonth(d.Fecha) + "</h6>"+ " <p class='text-primary'>"  + d.México + "</p>")
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
             })
