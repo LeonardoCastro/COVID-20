@@ -10,7 +10,7 @@ d3.csv(urlEdad, function(data) {
       , width = 460 - margin.left - margin.right
       , height = 400 - margin.top - margin.bottom
       , gutter = 30
-      , pyramid_h = height - 105
+      , pyramid_h = height 
       , dom_age = d3.extent( data, d => d.age )
       , dom_year = d3.extent( data, d => d.year )
       , dom_value = d3.extent( data, d => d.value )
@@ -26,7 +26,7 @@ d3.csv(urlEdad, function(data) {
       .append("g")
         .attr("transform",
               "translate(" + margin.left + "," + margin.top + ")");
-              
+
     var svg_text_m = svg.append( 'text' )
       .attr( 'transform', `translate(${cx-250},10)` )
       .style( 'font', '15px sans-serif' )

@@ -2,7 +2,12 @@
 var margin = {top: 10, right: 30, bottom: 30, left: 30},
     width = 460 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
+
 var url="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv";
+
+var url="https://raw.githubusercontent.com/blas-ko/COVID-19_Coupled-Epidemics/master/results/covid19_mex_proyeccion_susana_00.csv";
+var url="https://raw.githubusercontent.com/blas-ko/COVID-19_Coupled-Epidemics/master/results/covid19_mex_proyeccion_susana_20.csv";
+var url="https://raw.githubusercontent.com/blas-ko/COVID-19_Coupled-Epidemics/master/results/covid19_mex_proyeccion_susana_50.csv";
 
 
 var tip = d3.select("#grafica_totales").append("div")
@@ -100,7 +105,7 @@ var yyyy = today.getFullYear();
             tip.transition()
                 .duration(200)
                 .style("opacity", .9);
-            tip.html("<h6>" + formatDay(d.Fecha) + "/" + formatMonth(d.Fecha) + "</h6>"+ " <p class='text-primary'>"  + d.México + "</p>")
+            tip.html("<h6>" + formatDay(d.Fecha) + "/" + formatMonth(d.Fecha) + "</h6>"+ " <p class='text-primary'>"  + d.México  + "</p>")
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
             })
